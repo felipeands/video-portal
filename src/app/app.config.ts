@@ -1,5 +1,7 @@
 export class Config {
 
+  static get videosPerPage(): number { return 10; };
+
   // API url
   static get api(): string { return `http://localhost:3000/`; };
 

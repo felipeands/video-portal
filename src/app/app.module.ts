@@ -17,7 +17,7 @@ import { HelperService } from './services/helper/helper.service';
 // pages
 import { LoginComponent } from './pages/login/login.component';
 import { PageVideoComponent } from './pages/video/video.component';
-import { HomeComponent } from './pages/home/home.component';
+import { VideosComponent } from './pages/videos/videos.component';
 
 // components
 import { VideoComponent } from './components/video/video.component';
@@ -27,7 +27,7 @@ import { VideoComponent } from './components/video/video.component';
     AppComponent,
     LoginComponent,
     PageVideoComponent,
-    HomeComponent,
+    VideosComponent,
     VideoComponent
   ],
   imports: [

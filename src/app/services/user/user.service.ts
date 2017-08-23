@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 
 import { User } from './../../interfaces/user';
 import { HelperService } from './../helper/helper.service';
+import { Config } from './../../app.config';
 
 @Injectable()
 export class UserService {
@@ -23,7 +24,7 @@ export class UserService {
       obj.password = this.helperService.string2md5(obj.password);
       const params = this.helperService.obj2params(obj);
 
-      this.http.post(`http://localhost:3000/user/auth`, params, {
+      this.http.post(`${Config.api_user}`, params, {
         headers: this.helperService.getPostHeaders()
       }).subscribe((res) => {
         const json = res.json();
