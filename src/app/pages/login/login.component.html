@@ -1,3 +1,19 @@
-<p>
-  login works!
-</p>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+
+  <h2>Login</h2>
+
+  <div class="field">
+    <input type="text" name="username" placeholder="Username" ngModel required #username="ngModel"/>
+    <div class="error" *ngIf="!username.valid && isSubmited">Please fill correctly</div>
+  </div>
+
+  <div class="field">
+    <input type="password" name="password" placeholder="Password" ngModel required #password="ngModel"/>
+    <div class="error" *ngIf="!password.valid && isSubmited">Please fill correctly</div>
+  </div>
+
+  <div class="buttons">
+    <button>Submit</button>
+  </div>
+
+</form>
