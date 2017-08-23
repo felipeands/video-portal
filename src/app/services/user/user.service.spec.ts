@@ -17,8 +17,8 @@ describe('Service: Users', () => {
         HelperService,
         MockBackend,
         BaseRequestOptions,
-        { 
-          provide: Http, 
+        {
+          provide: Http,
           useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
             return new Http(backend, defaultOptions);
           },

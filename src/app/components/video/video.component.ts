@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './video.component.html',
   styleUrls: ['./video.component.scss']
 })
-export class PageVideoComponent implements OnInit {
+export class VideoComponent implements OnInit {
 
   constructor() { }
 

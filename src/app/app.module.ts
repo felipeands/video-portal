@@ -16,17 +16,19 @@ import { HelperService } from './services/helper/helper.service';
 
 // pages
 import { LoginComponent } from './pages/login/login.component';
-import { VideoComponent } from './pages/video/video.component';
+import { PageVideoComponent } from './pages/video/video.component';
 import { HomeComponent } from './pages/home/home.component';
 
 // components
+import { VideoComponent } from './components/video/video.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    VideoComponent,
-    HomeComponent
+    PageVideoComponent,
+    HomeComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,

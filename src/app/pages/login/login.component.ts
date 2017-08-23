@@ -12,6 +12,7 @@ import { UserService } from './../../services/user/user.service';
 export class LoginComponent implements OnInit {
 
   public isSubmited: boolean;
+  public errorMessage: string;
 
   constructor(
     private router: Router,
@@ -22,13 +23,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form) {
     this.isSubmited = true;
+    this.errorMessage = null;
 
     if (form.valid) {
 
       this.userService.login(form.value).then((res) => {
         this.router.navigate(['']);
       }, (err) => {
-
+        this.isSubmited = false;
+        if (err.status && err.status === 'error') { this.errorMessage = err.error; }
       });
 
     }

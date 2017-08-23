@@ -1,4 +1,4 @@
 export interface User {
-  sessionId: string,
-  username: string
+  sessionId: string;
+  username: string;
 }

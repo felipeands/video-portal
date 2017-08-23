@@ -4,13 +4,15 @@
 
   <div class="field">
     <input type="text" name="username" placeholder="Username" ngModel required #username="ngModel"/>
-    <div class="error" *ngIf="!username.valid && isSubmited">Please fill correctly</div>
+    <div class="error" *ngIf="!username.valid && isSubmited"><small>Please fill correctly</small></div>
   </div>
 
   <div class="field">
     <input type="password" name="password" placeholder="Password" ngModel required #password="ngModel"/>
-    <div class="error" *ngIf="!password.valid && isSubmited">Please fill correctly</div>
+    <div class="error" *ngIf="!password.valid && isSubmited"><small>Please fill correctly</small></div>
   </div>
+
+  <small *ngIf="errorMessage">{{errorMessage}}</small>
 
   <div class="buttons">
     <button>Submit</button>
