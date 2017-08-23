@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { ROUTES } from './routes';
+import { ROUTES } from './app.routes';
 
 // app
 import { AppComponent } from './app.component';
