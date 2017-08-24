@@ -30,7 +30,7 @@ export class PageVideoComponent implements OnInit {
       this.video = video;
     }, (err) => {
       alert(err.error);
-      this.router.navigate(['']);
+      this.router.navigate(['/login']);
     })
   }
 

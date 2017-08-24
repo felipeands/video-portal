@@ -22,6 +22,10 @@ export class VideoService {
 
       this.userService.getUser().then((user) => {
 
+        if (!user) {
+          reject({ error: 'Not authorized' });
+        }
+
         const obj = {
           sessionId: user.sessionId,
           skip: offset,
@@ -34,7 +38,7 @@ export class VideoService {
           const json = res.json();
           resolve(json.data);
         }, (err) => {
-          this.userService.logout().then(() => {
+          this.userService.setLoggedOut().then(() => {
             reject(err.json());
           });
         });
@@ -48,6 +52,10 @@ export class VideoService {
 
       this.userService.getUser().then((user) => {
 
+        if (!user) {
+          reject({ error: 'Not authorized' });
+        }
+
         const obj = {
           sessionId: user.sessionId,
           videoId: id
@@ -57,7 +65,7 @@ export class VideoService {
           const json = res.json();
           resolve(json.data);
         }, (err) => {
-          this.userService.logout().then(() => {
+          this.userService.setLoggedOut().then(() => {
             reject(err.json());
           });
         })

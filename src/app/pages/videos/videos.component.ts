@@ -40,7 +40,7 @@ export class VideosComponent implements OnInit {
       this.videos = this.videos.concat(videos);
     }, (err) => {
       alert(err.error);
-      this.router.navigate(['']);
+      this.router.navigate(['/login']);
     });
   }
 

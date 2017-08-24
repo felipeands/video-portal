@@ -54,6 +54,21 @@ export class UserService {
 
   async logout(): Promise<any> {
     return new Promise((resolve) => {
+      this.getUser().then((user: User) => {
+        this.http.get(`${Config.api_logout}`, { params: { sessionId: user.sessionId } }).subscribe(() => {
+          this.setLoggedOut();
+          resolve();
+        }, (err) => {
+          this.setLoggedOut();
+          resolve();
+        });
+      })
+
+    })
+  }
+
+  async setLoggedOut(): Promise<any> {
+    return new Promise((resolve) => {
       localStorage.removeItem('user');
       resolve();
     })
