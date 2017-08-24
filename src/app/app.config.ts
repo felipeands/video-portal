@@ -9,6 +9,7 @@ export class Config {
   static get api_user(): string { return `${Config.api}user/auth`; };
 
   // video api
+  static get api_video(): string { return `${Config.api}video` }
   static get api_videos(): string { return `${Config.api}videos` }
 
 

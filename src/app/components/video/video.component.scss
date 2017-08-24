@@ -1,8 +1,20 @@
 .video {
   padding: 30px;
-  
-  video {
-    max-height: 300px;
-    width: 100%;
+
+  &.preview {
+
+    h2 {
+      cursor: pointer;
+    }
+
+    video {
+      max-height: 300px;
+      width: 100%;
+    }
   }
+
+  video {
+    width: 640px;
+  }
+  
 }

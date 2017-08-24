@@ -1,8 +1,13 @@
-<div *ngIf="video" class="video">
-  <h2>{{video.name}}</h2>
-  <video controls (play)="onPlay()" #videoTag>
+<div *ngIf="video" class="video" [class.preview]="preview">
+
+  <h2 (click)="onOpen()">{{video.name}}</h2>
+  
+  <video controls (play)="onPlay()" [autoplay]="autoplay" #videoTag>
     <source src="{{apiUrl}}{{video.url}}">
   </video>
+
   <div class="rating"></div>
-  <p *ngIf="full">{{video.description}}</p>
+
+  <p *ngIf="!preview">{{video.description}}</p>
+
 </div>

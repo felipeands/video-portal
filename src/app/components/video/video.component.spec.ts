@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BaseRequestOptions, Http, HttpModule, Response, ResponseOptions } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { VideoComponent } from './video.component';
 import { VideoService } from './../../services/video/video.service';
@@ -14,7 +15,7 @@ describe('VideoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [HttpModule, RouterTestingModule],
       declarations: [VideoComponent],
       providers: [
         VideoService,

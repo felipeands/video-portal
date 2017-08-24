@@ -30,7 +30,7 @@ export class VideoService {
 
         const params = this.helperService.obj2params(obj);
 
-        this.http.get(`${Config.api_videos}?${params}`, ).subscribe((res) => {
+        this.http.get(`${Config.api_videos}?${params}`).subscribe((res) => {
           const json = res.json();
           resolve(json.data);
         }, (err) => {
@@ -38,6 +38,28 @@ export class VideoService {
         });
 
       })
+    })
+  }
+
+  getVideoById(id: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+
+      this.userService.getUser().then((user) => {
+
+        const obj = {
+          sessionId: user.sessionId,
+          videoId: id
+        }
+
+        this.http.get(`${Config.api_video}`, { params: obj }).subscribe((res) => {
+          const json = res.json();
+          resolve(json.data);
+        }, (err) => {
+          reject(err);
+        })
+
+      })
+
     })
   }
 

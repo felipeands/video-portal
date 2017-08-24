@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Video } from './../../interfaces/video';
 import { VideoService } from './../../services/video/video.service';
@@ -12,12 +13,15 @@ import { Config } from './../../app.config';
 export class VideoComponent implements OnInit {
 
   @Input() video: Video;
-  @Input() full: boolean;
-  @ViewChild('videoTag') private elVideo: ElementRef;
+  @Input() preview: boolean;
+  @Input() autoplay: boolean;
+  
+  @ViewChild('videoTag') elVideo: ElementRef;
 
   public apiUrl = Config.api;
 
   constructor(
+    private router: Router,
     private videoService: VideoService
   ) { }
 
@@ -31,6 +35,10 @@ export class VideoComponent implements OnInit {
 
   onPlay() {
     this.videoService.onPlayVideo(this.video);
+  }
+
+  onOpen() {
+    this.router.navigate(['/video', this.video._id]);
   }
 
 }
