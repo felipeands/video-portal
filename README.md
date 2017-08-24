@@ -5,11 +5,11 @@ This project was generated with [Angular 4.3.5]
 
 ## Start
 
-Run `npm start` to build and start the application.
+Run `npm start` to build dev and start the application.
 
-## Build
+## Build 
 
-Run `ng build -prod -aot` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build -prod -aot` to build the project for production. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
