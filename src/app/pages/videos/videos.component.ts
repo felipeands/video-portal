@@ -15,7 +15,6 @@ export class VideosComponent implements OnInit {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       this.loadMore();
     }
-
   }
 
   private perPage: number;

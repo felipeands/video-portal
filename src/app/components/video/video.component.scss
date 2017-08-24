@@ -11,10 +11,43 @@
       max-height: 300px;
       width: 100%;
     }
+
+    .rating {
+      justify-content: flex-start;
+    }
+  }
+
+  h2 {
+    font-size: 1.0em;
+  }
+
+  p {
+    font-size: 0.8em;
   }
 
   video {
     width: 640px;
+  }
+
+  .rating {
+    display: flex;
+    justify-content: center;
+
+    .star {
+      &:before {
+        content: "\f006";
+        font-family: FontAwesome;
+        font-size: 1.4em;
+        color: yellow;
+      }
+
+      &.active {
+        &:before {
+          content: "\f005"
+        }
+      }
+    }
+
   }
   
 }

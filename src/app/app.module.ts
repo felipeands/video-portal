@@ -21,7 +21,6 @@ import { VideosComponent } from './pages/videos/videos.component';
 
 // components
 import { VideoComponent } from './components/video/video.component';
-import { ScrollDirective } from './directives/scroll.directive';
 
 @NgModule({
   declarations: [
@@ -29,8 +28,7 @@ import { ScrollDirective } from './directives/scroll.directive';
     LoginComponent,
     PageVideoComponent,
     VideosComponent,
-    VideoComponent,
-    ScrollDirective
+    VideoComponent
   ],
   imports: [
     BrowserModule,

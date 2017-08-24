@@ -15,22 +15,28 @@ export class VideoComponent implements OnInit {
   @Input() video: Video;
   @Input() preview: boolean;
   @Input() autoplay: boolean;
-  
+
   @ViewChild('videoTag') elVideo: ElementRef;
 
   public apiUrl = Config.api;
+  public rating: number;
 
   constructor(
     private router: Router,
     private videoService: VideoService
-  ) { }
+  ) {
+    this.rating = 0;
+  }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.videoService.getPlayVideo().subscribe((video: Video) => {
       if (video !== this.video) {
         this.elVideo.nativeElement.pause();
       }
     });
+    setTimeout(() => {
+      this.rating = this.getRating();
+    }, 100);
   }
 
   onPlay() {
@@ -39,6 +45,19 @@ export class VideoComponent implements OnInit {
 
   onOpen() {
     this.router.navigate(['/video', this.video._id]);
+  }
+
+  getRating(): number {
+    if (!this.video) { return; }
+    const total = this.video.ratings.reduce((total, num) => {
+      return total + num;
+    });
+    const rating = total / this.video.ratings.length;
+    return Math.ceil(rating);
+  }
+
+  isActiveStar(star: number): boolean {
+    return (this.rating >= star);
   }
 
 }
