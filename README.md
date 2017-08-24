@@ -21,4 +21,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor].
 
 ## Further help
 
-Please edit the file `src/app.config.ts` if you need update the api server url.
+Please edit the file `src/app/app.config.ts` if you need update the api server url.
