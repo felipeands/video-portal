@@ -8,7 +8,9 @@ import { BaseRequestOptions, Http, HttpModule, Response, ResponseOptions } from 
 import { MockBackend } from '@angular/http/testing';
 
 import { VideoService } from './../../services/video/video.service';
+import { UserService } from './../../services/user/user.service';
 import { HelperService } from './../../services/helper/helper.service';
+import { VideoComponent } from './../../components/video/video.component';
 
 describe('VideosComponent', () => {
   let component: VideosComponent;
@@ -17,9 +19,10 @@ describe('VideosComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule, HttpModule, RouterTestingModule],
-      declarations: [VideosComponent],
+      declarations: [VideosComponent, VideoComponent],
       providers: [
         VideoService,
+        UserService,
         HelperService,
         MockBackend,
         BaseRequestOptions,

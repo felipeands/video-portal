@@ -1,3 +1,8 @@
-<p>
-  video works!
-</p>
+<div *ngIf="video" class="video">
+  <h2>{{video.name}}</h2>
+  <video controls (play)="onPlay()" #videoTag>
+    <source src="{{apiUrl}}{{video.url}}">
+  </video>
+  <div class="rating"></div>
+  <p *ngIf="full">{{video.description}}</p>
+</div>

@@ -4,6 +4,7 @@ import { BaseRequestOptions, Http, HttpModule, Response, ResponseOptions } from 
 import { MockBackend } from '@angular/http/testing';
 
 import { VideoService } from './video.service';
+import { UserService } from './../user/user.service';
 import { HelperService } from './../helper/helper.service';
 
 describe('VideoService', () => {
@@ -11,6 +12,7 @@ describe('VideoService', () => {
     TestBed.configureTestingModule({
       providers: [
         VideoService,
+        UserService,
         HelperService,
         MockBackend,
         BaseRequestOptions,

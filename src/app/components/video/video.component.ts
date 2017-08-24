@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
+
+import { Video } from './../../interfaces/video';
+import { VideoService } from './../../services/video/video.service';
+import { Config } from './../../app.config';
 
 @Component({
   selector: 'app-video',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoComponent implements OnInit {
 
-  constructor() { }
+  @Input() video: Video;
+  @Input() full: boolean;
+  @ViewChild('videoTag') private elVideo: ElementRef;
 
-  ngOnInit() {
+  public apiUrl = Config.api;
+
+  constructor(
+    private videoService: VideoService
+  ) { }
+
+  ngOnInit() { 
+    this.videoService.getPlayVideo().subscribe((video: Video) => {
+      if (video !== this.video) {
+        this.elVideo.nativeElement.pause();
+      }
+    });
+  }
+
+  onPlay() {
+    this.videoService.onPlayVideo(this.video);
   }
 
 }

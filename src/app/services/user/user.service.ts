@@ -13,8 +13,13 @@ export class UserService {
     private helperService: HelperService
   ) { }
 
+  async getUser() {
+    const data = await localStorage.getItem('user');
+    return (data) ? JSON.parse(data) : null;
+  }
+
   async isLoggedIn() {
-    const user = await localStorage.getItem('user');
+    const user = await this.getUser();
     return (user !== null) ? true : false;
   }
 
@@ -46,5 +51,7 @@ export class UserService {
     if (user.status) { delete user.status; }
     localStorage.setItem('user', JSON.stringify(user));
   }
+
+  
 
 }

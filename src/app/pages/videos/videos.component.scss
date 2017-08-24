@@ -1,0 +1,11 @@
+section.videos {
+  display: flex;
+  flex-wrap: wrap;
+
+  .video {
+    display: inline-block;
+    flex-grow: 1;
+    width: calc(100% * (1/2) - 10px - 1px);
+  }
+
+}
