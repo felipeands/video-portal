@@ -1,21 +1,25 @@
-<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+<section class="login">
 
-  <h2>Login</h2>
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
 
-  <div class="field">
-    <input type="text" name="username" placeholder="Username" ngModel required #username="ngModel"/>
-    <div class="error" *ngIf="!username.valid && isSubmited"><small>Please fill correctly</small></div>
-  </div>
+    <h2>Login</h2>
 
-  <div class="field">
-    <input type="password" name="password" placeholder="Password" ngModel required #password="ngModel"/>
-    <div class="error" *ngIf="!password.valid && isSubmited"><small>Please fill correctly</small></div>
-  </div>
+    <div class="field">
+      <input type="text" name="username" placeholder="Username" ngModel required #username="ngModel" />
+      <div class="error" *ngIf="!username.valid && isSubmited"><small>Please fill correctly</small></div>
+    </div>
 
-  <small *ngIf="errorMessage">{{errorMessage}}</small>
+    <div class="field">
+      <input type="password" name="password" placeholder="Password" ngModel required #password="ngModel" />
+      <div class="error" *ngIf="!password.valid && isSubmited"><small>Please fill correctly</small></div>
+    </div>
 
-  <div class="buttons">
-    <button>Submit</button>
-  </div>
+    <div class="error response" *ngIf="errorMessage">{{errorMessage}}</div>
 
-</form>
+    <div class="buttons">
+      <button>Submit</button>
+    </div>
+
+  </form>
+
+</section>

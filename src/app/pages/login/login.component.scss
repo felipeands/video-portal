@@ -1,0 +1,46 @@
+$primary_color: #ccc;
+
+section.login {
+
+  h2 {
+    margin-top: 0;
+  }
+
+  form {
+    max-width: 240px;
+    text-align: center;
+    margin: 20% auto 0;
+    padding: 20px;
+    border: 1px solid $primary_color;
+    border-radius: 4px;
+
+    .field {
+      margin-bottom: 10px;      
+
+      input {
+        border: 1px solid $primary_color;
+        padding: 5px;
+      }
+
+    }
+
+    button {
+      background: $primary_color;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 30px;
+    }
+
+    .error {
+      color: #ff0000;
+      font-size: 0.7em;
+    }
+
+    .response {
+      margin-bottom: 10px;
+    }
+
+  }
+
+}
