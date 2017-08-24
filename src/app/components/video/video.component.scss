@@ -31,6 +31,11 @@
 
   video {
     max-width: 100%;
+    margin-bottom: 10px;
+
+    -webkit-box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.15);
+    box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.15);
   }
 
   .rating {

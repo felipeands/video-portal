@@ -2,17 +2,25 @@ $primary_color: #ccc;
 
 section.login {
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
   h2 {
     margin-top: 0;
   }
 
   form {
-    max-width: 240px;
+    background: white;
     text-align: center;
-    margin: 20% auto 0;
-    padding: 20px;
+    padding: 20px 60px;
     border: 1px solid $primary_color;
     border-radius: 4px;
+
+    -webkit-box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.15);
+    box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.15);
 
     .field {
       margin-bottom: 10px;      
