@@ -3,6 +3,10 @@
 This project was generated with [Angular 4.3.5] 
 [Angular CLI 1.3.1].
 
+## Start
+
+Run `npm start` to build and start the application.
+
 ## Build
 
 Run `ng build -prod -aot` to build the project. The build artifacts will be stored in the `dist/` directory.
