@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Video } from './../../interfaces/video';
 import { VideoService } from './../../services/video/video.service';
@@ -14,6 +14,7 @@ export class PageVideoComponent implements OnInit {
   public video: Video;
 
   constructor(
+    private router: Router,
     private activatedRoute: ActivatedRoute,
     private videoService: VideoService
   ) { }
@@ -27,6 +28,9 @@ export class PageVideoComponent implements OnInit {
   getVideoById(id: string) {
     this.videoService.getVideoById(id).then((video: Video) => {
       this.video = video;
+    }, (err) => {
+      alert(err.error);
+      this.router.navigate(['']);
     })
   }
 

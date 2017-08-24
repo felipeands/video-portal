@@ -34,7 +34,9 @@ export class VideoService {
           const json = res.json();
           resolve(json.data);
         }, (err) => {
-          reject(err);
+          this.userService.logout().then(() => {
+            reject(err.json());
+          });
         });
 
       })
@@ -55,7 +57,9 @@ export class VideoService {
           const json = res.json();
           resolve(json.data);
         }, (err) => {
-          reject(err);
+          this.userService.logout().then(() => {
+            reject(err.json());
+          });
         })
 
       })

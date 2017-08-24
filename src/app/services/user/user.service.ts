@@ -29,7 +29,7 @@ export class UserService {
       obj.password = this.helperService.string2md5(obj.password);
       const params = this.helperService.obj2params(obj);
 
-      this.http.post(`${Config.api_user}`, params, {
+      this.http.post(`${Config.api_auth}`, params, {
         headers: this.helperService.getPostHeaders()
       }).subscribe((res) => {
         const json = res.json();
@@ -47,11 +47,16 @@ export class UserService {
     });
   }
 
-  setLoggedIn(user) {
+  async setLoggedIn(user) {
     if (user.status) { delete user.status; }
-    localStorage.setItem('user', JSON.stringify(user));
+    return await localStorage.setItem('user', JSON.stringify(user));
   }
 
-  
+  async logout(): Promise<any> {
+    return new Promise((resolve) => {
+      localStorage.removeItem('user');
+      resolve();
+    })
+  }
 
 }

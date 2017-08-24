@@ -6,7 +6,8 @@ export class Config {
   static get api(): string { return `http://localhost:3000/`; };
 
   // user api
-  static get api_user(): string { return `${Config.api}user/auth`; };
+  static get api_auth(): string { return `${Config.api}user/auth`; };
+  static get api_logout(): string { return `${Config.api}user/logout`; };
 
   // video api
   static get api_video(): string { return `${Config.api}video` }

@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Video } from './../../interfaces/video';
 import { VideoService } from './../../services/video/video.service';
@@ -22,6 +23,7 @@ export class VideosComponent implements OnInit {
   public videos: Video[];
 
   constructor(
+    private router: Router,
     private videoService: VideoService
   ) {
     this.perPage = Config.videosPerPage;
@@ -36,6 +38,9 @@ export class VideosComponent implements OnInit {
   getVideos() {
     this.videoService.getVideos(this.perPage, this.offset).then((videos: Video[]) => {
       this.videos = this.videos.concat(videos);
+    }, (err) => {
+      alert(err.error);
+      this.router.navigate(['']);
     });
   }
 
