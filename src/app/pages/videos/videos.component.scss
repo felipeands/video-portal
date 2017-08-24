@@ -8,4 +8,12 @@ section.videos {
     width: calc(100% * (1/2) - 10px - 1px);
   }
 
+  @media (max-width: 599px) { 
+    .video { width: 100%; }
+  }
+
+  @media (min-width: 1200px) { 
+    .video { width: calc(100% * (1/3) - 10px - 1px); }
+   }
+
 }

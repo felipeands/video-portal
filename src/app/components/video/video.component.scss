@@ -12,6 +12,10 @@
       width: 100%;
     }
 
+    @media (min-width: 1200px) { 
+      max-width: 640px;
+     }
+
     .rating {
       justify-content: flex-start;
     }
@@ -26,7 +30,7 @@
   }
 
   video {
-    width: 640px;
+    max-width: 100%;
   }
 
   .rating {
